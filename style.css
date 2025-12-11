@@ -158,6 +158,117 @@ h1 {
 .card-info h3 { margin: 0 0 8px; font-size: 1.25rem; }
 .tag { color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; }
 
+/* --- 6. AWARDS LIST SECTION --- */
+.awards-list-section {
+    padding: 100px 0;
+    background: var(--bg-dark);
+}
+
+.section-header-row {
+    margin-bottom: 60px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.section-subhead {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    max-width: 400px;
+    text-align: right;
+}
+
+/* The Table Grid */
+.award-table {
+    display: flex;
+    flex-direction: column;
+}
+
+.award-row {
+    display: grid;
+    /* Grid: Year | Project | Award Name | Link */
+    grid-template-columns: 0.5fr 1.5fr 2fr 0.5fr; 
+    padding: 24px 0;
+    border-bottom: 1px solid #222;
+    align-items: center;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+    text-decoration: none; /* Removes default underline */
+}
+
+/* Typography in the row */
+.award-year {
+    font-family: monospace; /* Technical feel */
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+.award-project {
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.award-name {
+    font-weight: 400;
+}
+
+.award-link {
+    text-align: right;
+    font-size: 0.85rem;
+    opacity: 0; /* Hidden by default */
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    color: var(--accent);
+}
+
+/* Hover Effects */
+.award-row:hover {
+    background: rgba(255, 255, 255, 0.03); /* Subtle highlight */
+    padding-left: 20px; /* Slight movement */
+    padding-right: 20px;
+    color: white;
+    border-color: #333;
+}
+
+.award-row:hover .award-link {
+    opacity: 1; /* Show "View Story" */
+    transform: translateX(0);
+}
+
+.award-row:hover .award-year {
+    color: var(--accent);
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .section-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .section-subhead { text-align: left; }
+    
+    .award-row {
+        grid-template-columns: 1fr; /* Stack vertically */
+        gap: 8px;
+        padding: 20px 0;
+    }
+    
+    .award-link {
+        opacity: 1; /* Always show link on mobile */
+        transform: none;
+        text-align: left;
+        margin-top: 8px;
+    }
+    
+    .award-year { margin-bottom: 4px; }
+}
+
 /* --- FOOTER --- */
 .footer-section {
     padding: 120px 0;
