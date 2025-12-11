@@ -158,117 +158,123 @@ h1 {
 .card-info h3 { margin: 0 0 8px; font-size: 1.25rem; }
 .tag { color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; }
 
-/* --- 6. AWARDS LIST SECTION --- */
+/* --- 6. AWARDS VISUAL LIST --- */
 .awards-list-section {
-    padding: 100px 0;
+    padding: 120px 0;
     background: var(--bg-dark);
 }
 
-.section-header-row {
-    margin-bottom: 60px;
-    border-bottom: 1px solid #222;
-    padding-bottom: 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.section-subhead {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    max-width: 400px;
-    text-align: right;
-}
-
-/* The Table Grid */
-.award-table {
+.award-grid-visual {
     display: flex;
     flex-direction: column;
+    border-top: 1px solid #333;
 }
 
-.award-row {
-    display: grid;
-    /* Grid: Year | Project | Award Name | Link */
-    grid-template-columns: 0.5fr 1.5fr 2fr 0.5fr; 
-    padding: 24px 0;
-    border-bottom: 1px solid #222;
+.award-visual-row {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    color: var(--text-muted);
-    transition: all 0.3s ease;
-    text-decoration: none; /* Removes default underline */
+    padding: 32px 0; /* Tall, spacious rows */
+    border-bottom: 1px solid #333;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Typography in the row */
+/* LEFT SIDE: Typography */
+.award-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    z-index: 2;
+}
+
 .award-year {
-    font-family: monospace; /* Technical feel */
-    font-size: 0.9rem;
-    opacity: 0.6;
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 4px;
 }
 
 .award-project {
     color: white;
-    font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1.75rem; /* Large, magazine-style font */
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.02em;
 }
 
-.award-name {
-    font-weight: 400;
+.award-title {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 500;
 }
 
-.award-link {
-    text-align: right;
-    font-size: 0.85rem;
-    opacity: 0; /* Hidden by default */
-    transform: translateX(-10px);
-    transition: all 0.3s ease;
-    color: var(--accent);
+.text-accent {
+    color: var(--accent); /* Highlight "Best of Best" */
 }
 
-/* Hover Effects */
-.award-row:hover {
-    background: rgba(255, 255, 255, 0.03); /* Subtle highlight */
-    padding-left: 20px; /* Slight movement */
+/* RIGHT SIDE: The Logo */
+.award-icon {
+    width: 80px; /* Fixed width for alignment */
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s ease;
+    opacity: 0.5; /* Dimmed by default */
+}
+
+.award-icon img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    /* Force logo to be monochrome white */
+    filter: grayscale(100%) invert(1) brightness(0.8);
+    transition: filter 0.3s ease;
+}
+
+/* --- HOVER EFFECTS --- */
+.award-visual-row:hover {
+    background: #111; /* Subtle background shift */
+    padding-left: 20px; /* Slide content right */
     padding-right: 20px;
-    color: white;
-    border-color: #333;
+    border-color: #555;
 }
 
-.award-row:hover .award-link {
-    opacity: 1; /* Show "View Story" */
-    transform: translateX(0);
-}
-
-.award-row:hover .award-year {
-    color: var(--accent);
+.award-visual-row:hover .award-icon {
     opacity: 1;
+    transform: scale(1.1); /* Logo grows slightly */
 }
 
-/* Responsive */
+.award-visual-row:hover .award-icon img {
+    /* Reveal original logo colors (or bright white) on hover */
+    /* Option A: Bright White */
+    filter: grayscale(100%) invert(1) brightness(2); 
+    
+    /* Option B: If you want Original Colors (Red Dot becomes Red), use this instead: */
+    /* filter: grayscale(0%) invert(0) brightness(1); */
+}
+
+.award-visual-row:hover .award-project {
+    color: var(--accent); /* Project title turns orange */
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
-    .section-header-row {
-        flex-direction: column;
+    .award-visual-row {
         align-items: flex-start;
     }
-    .section-subhead { text-align: left; }
-    
-    .award-row {
-        grid-template-columns: 1fr; /* Stack vertically */
-        gap: 8px;
-        padding: 20px 0;
+    .award-project { font-size: 1.4rem; }
+    .award-icon {
+        width: 50px;
+        height: 50px;
+        align-self: flex-start;
+        margin-top: 5px;
     }
-    
-    .award-link {
-        opacity: 1; /* Always show link on mobile */
-        transform: none;
-        text-align: left;
-        margin-top: 8px;
-    }
-    
-    .award-year { margin-bottom: 4px; }
 }
-
 /* --- FOOTER --- */
 .footer-section {
     padding: 120px 0;
