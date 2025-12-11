@@ -174,29 +174,133 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
     filter: drop-shadow(0px 10px 40px rgba(0,0,0,0.6));
 }
 
-/* --- 2. TRACTOR SHOWCASE --- */
+/* --- 2. TRACTOR SHOWCASE (CINEMATIC) --- */
 .tractor-section {
-    background: #000;
-    padding: 120px 0;
+    background: #050505;
+    padding: 160px 0; /* More vertical space */
     overflow: hidden;
     position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
+    /* Subtle radial gradient to spotlight the tractor */
+    background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000000 70%);
 }
 
+/* LAYER 1: Background Typography */
+.bg-text-layer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(8rem, 20vw, 25rem); /* Massive responsive text */
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.03); /* Very subtle opacity */
+    white-space: nowrap;
+    z-index: 1; /* Behind tractor */
+    letter-spacing: -0.05em;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* LAYER 2: The Tractor */
 .s-tractor-visual {
     width: 100%;
     display: flex;
     justify-content: center;
     padding: 0 20px;
+    position: relative;
+    z-index: 2; /* On top of text */
 }
 
 .tractor-still {
-    max-width: 1600px;
+    max-width: 1400px;
     width: 100%;
     height: auto;
-    /* Massive impactful image */
-    transform: scale(1.05); 
+    filter: drop-shadow(0 30px 60px rgba(0,0,0,0.8)); /* Deep shadow for realism */
+    transition: transform 0.5s ease;
+}
+
+/* LAYER 3: The Award Story Overlay */
+.showcase-overlay {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    width: 100%;
+    max-width: 1240px;
+    padding: 0 24px;
+    display: flex;
+    justify-content: flex-start; /* Align card to left or right */
+}
+
+/* The Glassmorphism Card */
+.award-badge-group {
+    background: rgba(20, 20, 20, 0.6); /* Semi-transparent black */
+    backdrop-filter: blur(12px); /* Blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 32px;
+    border-radius: 4px;
+    max-width: 450px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.award-badge-group h3 {
+    font-size: 2rem;
+    color: white;
+    margin: 8px 0 12px;
+    line-height: 1.1;
+}
+
+.award-badge-group p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+.award-pill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.award-pill {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* Highlight the "Best of Best" pill */
+.award-pill.highlight {
+    border-color: var(--accent);
+    color: white;
+    background: rgba(255, 122, 0, 0.1);
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 1024px) {
+    .showcase-overlay {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin-top: -40px; /* Overlap the image slightly */
+        justify-content: center;
+    }
+    
+    .award-badge-group {
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+    .award-pill-list {
+        justify-content: center;
+    }
 }
 
 /* --- 3. ABOUT & 7. CV SECTIONS --- */
