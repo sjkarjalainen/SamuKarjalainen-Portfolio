@@ -506,6 +506,31 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 /* --- CV PAGE STYLES (cv.html) --- */
 /* ==================================== */
 
+/* --- CV PAGE SPECIFIC HERO --- */
+.cv-hero-section {
+    padding-top: 100px; /* Space below fixed navigation */
+}
+
+/* Revert the cv-header styles to use the main-header component structure */
+.cv-main-header {
+    /* Use main-header styling for fixed position and background */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(10, 10, 10, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+/* Fix the header h1 size on the CV page since it's used inside the content area */
+.cv-header-info h1 {
+    font-size: clamp(2rem, 3.5vw, 3rem); /* Adjust size */
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0;
+}
+
 .cv-page {
     background: var(--bg-dark);
 }
@@ -616,7 +641,7 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
         background: white !important;
         color: black !important;
     }
-    .cv-header, .cv-footer, .back-link {
+    .main-header, .cv-main-header, .cv-footer, .back-link {
         display: none !important;
     }
     .cv-grid-two-col {
@@ -637,7 +662,6 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
     
     .cv-header-grid {
         grid-template-columns: 1fr !important;
-        text-align: left !important;
     }
 }
 
