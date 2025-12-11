@@ -252,7 +252,7 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 
 .case-image { display: flex; justify-content: center; align-items: center; }
 .case-image img { 
-    width: 100%; height: auto; object-fit: contain; 
+    width: 50%; height: auto; object-fit: contain; 
     filter: drop-shadow(0px 20px 50px rgba(0,0,0,0.4));
 }
 
@@ -290,6 +290,17 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
     background: #1a1a1a;
     width: 100%;
     overflow: hidden;
+}
+/* --- NEW: PADDED CARD STYLE (For Card 2) --- */
+/* Add this new class for cards that need margins around the image */
+.project-thumb.padded {
+    padding: 40px; /* Adds the margin inside the gray box */
+    background: #1a1a1a; /* Ensures background remains dark gray */
+}
+/* Ensure the image inside a padded card fits nicely (doesn't crop) */
+.project-thumb.padded img {
+    object-fit: contain; /* Shows full image, no cropping */
+    transform-origin: center;
 }
 .project-thumb img {
     width: 100%; height: 100%; object-fit: cover;
