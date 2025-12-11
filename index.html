@@ -3,100 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samu Karjalainen | Design Portfolio</title>
+    <title>Samu Karjalainen | Industrial & Visual Designer</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
     <section class="hero-section">
-        <div class="container hero-grid">
-            <div class="hero-content">
-                <span class="eyebrow">Samu Karjalainen</span>
-                <h1>Industrial & <br><span class="accent">Visual Designer</span></h1>
-                <p class="lead">Designing the connection between heavy machinery and human intelligence.</p>
-                <div class="scroll-down">Scroll to explore ↓</div>
+        <div class="hero-container">
+            <div class="hero-text">
+                <span class="hero-name">SAMU KARJALAINEN</span>
+                <h1 class="hero-title">
+                    Industrial & <br>
+                    <span class="text-accent no-break">Visual Designer</span>
+                </h1>
+                <p class="hero-description">
+                    Specializing in high-fidelity 3D visualization, HMI interface design, and technical graphics for heavy machinery.
+                </p>
             </div>
-            <div class="hero-visual">
-                <img src="img/samu2.png" alt="Samu Karjalainen Portrait">
+
+            <div class="hero-image-wrapper">
+                <img src="img/samu2.png" alt="Samu Karjalainen" class="hero-img">
+            </div>
+
+            <div class="scroll-indicator">
+                Scroll to explore ↓
             </div>
         </div>
     </section>
 
-    <section class="showcase-section">
-        <div class="showcase-visual">
-            <img src="img/S_6.png" alt="Valtra S Series Tractor" class="hero-product-img">
+    <section class="tractor-section fade-on-scroll">
+        <div class="s-tractor-visual">
+            <img src="img/S_6.png" alt="Valtra S Series" class="tractor-still">
         </div>
-        
-        <div class="award-reel-container">
-            <div class="award-track">
-                <div class="award-item"><img src="svg/Logo_of_Red_Dot_Award.svg"> <span>Best of the Best</span></div>
-                <div class="award-item"><img src="svg/IFForumDesignLogo.svg"> <span>Design Award</span></div>
-                <div class="award-item"><img src="svg/Good_design_award.svg"> <span>Good Design</span></div>
-                <div class="award-item"><img src="svg/Logo_of_Red_Dot_Award.svg"> <span>Best of the Best</span></div>
-                <div class="award-item"><img src="svg/IFForumDesignLogo.svg"> <span>Design Award</span></div>
-                <div class="award-item"><img src="svg/Good_design_award.svg"> <span>Good Design</span></div>
+    </section>
+
+    <section class="about-section fade-on-scroll">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-label">
+                    <h2 class="section-label">Profile</h2>
+                </div>
+                <div class="about-content">
+                    <p class="lead-text">I am a multidisciplinary designer operating at the intersection of industrial form, digital interfaces, and visual storytelling.</p>
+                    <p>My work centers on the visual ecosystem of heavy machinery. This encompasses the entire pipeline: from building complex <strong>3D scenes and textures</strong> for marketing renders, to designing the <strong>UI components</strong> drivers interact with daily, down to the precise <strong>technical graphics</strong> on the machine itself.</p>
+                    <p>I believe that a premium product requires consistency across every touchpoint—whether it’s a photorealistic render, a digital icon, or a physical safety label.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="case-study-section">
-        <div class="container case-grid">
-            <div class="case-text">
-                <span class="section-label">Selected Case Study</span>
-                <h2>Valtra Smart Display</h2>
-                <div class="case-meta">
-                    <div class="meta-item">
-                        <h4>Role</h4>
-                        <p>Lead HMI Designer (UI/UX)</p>
-                    </div>
-                    <div class="meta-item">
-                        <h4>Outcome</h4>
-                        <p>Red Dot & iF Design Awards</p>
+    <section class="case-study-section fade-on-scroll">
+        <div class="container">
+            <div class="case-study-grid">
+                
+                <div class="case-info">
+                    <span class="case-label">Case Study</span>
+                    <h2 class="case-title">Valtra Smart Display</h2>
+                    
+                    <div class="case-stats">
+                        <div class="stat-block">
+                            <h4>Overview</h4>
+                            <p>The primary interface for Valtra’s 5th generation tractors. Integrating guidance and ISOBUS control into a cohesive touch experience.</p>
+                        </div>
+                        <div class="stat-block">
+                            <h4>My Contribution</h4>
+                            <p>UI Visual Design • Iconography Systems • 3D Interface Assets • UX Flows</p>
+                        </div>
+                        <div class="stat-block">
+                            <h4>Outcome</h4>
+                            <p>Contributed key visual assets to a system recognized by Red Dot, iF Design, and Good Design Awards.</p>
+                        </div>
                     </div>
                 </div>
-                <p class="case-desc">The primary digital interface for Valtra’s 5th generation tractors. A complete design system built to bridge complex machine data with intuitive human control.</p>
+
+                <div class="case-image">
+                    <img src="img/SD_1.png" alt="Valtra Smart Display Interface">
+                </div>
+
             </div>
-            <div class="case-visual">
-                <img src="img/SD_1.png" alt="Valtra Smart Display Interface">
+            
+            <div class="video-container gsap-fade-up">
+                <iframe src="https://www.youtube.com/embed/-eCfurG8LsI" title="Valtra Smart Display" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </section>
 
-    <section class="projects-section">
+    <section class="projects-section fade-on-scroll">
         <div class="container">
-            <h2 class="section-heading">Recent Work</h2>
+            <h2 class="section-heading">Selected Projects</h2>
             <div class="projects-grid">
                 
-                <a href="#" class="project-card">
-                    <div class="card-image">
-                        <img src="img/S_7.png" alt="S-Series Concept">
+                <div class="project-card">
+                    <div class="project-thumb">
+                        <img src="img/S_7.png" alt="S-Series Visualization">
                     </div>
-                    <div class="card-info">
-                        <h3>Valtra S-Series</h3>
-                        <span class="tag">3D Visualization • Concept</span>
+                    <div class="project-details">
+                        <h3>S-Series Visualization</h3>
+                        <p>Scene building, texturing, and rendering for global launch materials.</p>
+                        <span class="tag">3D Rendering & Visualization</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-thumb">
+                        <img src="img/Rasva.png" alt="Technical Graphics">
+                    </div>
+                    <div class="project-details">
+                        <h3>Technical Graphics</h3>
+                        <p>Standardized safety decals and instructional symbology.</p>
+                        <span class="tag">Information Design</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-thumb">
+                        <img src="img/Valtra_SMART_01.png" alt="HMI Component Library">
+                    </div>
+                    <div class="project-details">
+                        <h3>HMI Component Library</h3>
+                        <p>Iconography and visual assets for Smart Touch interfaces.</p>
+                        <span class="tag">UI/UX Design</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="awards-list-section fade-on-scroll">
+        <div class="container">
+            <div class="section-header-row">
+                <h2 class="section-heading">Honors & Recognition</h2>
+            </div>
+
+            <div class="award-grid-visual">
+                
+                <a href="https://www.red-dot.org/project/valtra-s-series-81509" target="_blank" class="award-visual-row">
+                    <div class="award-info">
+                        <span class="award-year">2025</span>
+                        <h3 class="award-project">Valtra S Series</h3>
+                        <span class="award-title text-accent">Red Dot: Best of the Best</span>
+                    </div>
+                    <div class="award-icon">
+                        <img src="svg/Logo_of_Red_Dot_Award.svg" alt="Red Dot Logo">
+                    </div>
+                </a>
+                
+                <a href="https://ifdesign.com/en/winner-ranking/project/valtra-s-series/672528" target="_blank" class="award-visual-row">
+                    <div class="award-info">
+                        <span class="award-year">2025</span>
+                        <h3 class="award-project">Valtra S Series</h3>
+                        <span class="award-title">iF Design Award</span>
+                    </div>
+                    <div class="award-icon">
+                        <img src="svg/IFForumDesignLogo.svg" alt="iF Logo">
                     </div>
                 </a>
 
-                <a href="#" class="project-card">
-                    <div class="card-image">
-                        <img src="img/Rasva.png" alt="Instructional Design">
+                <a href="https://gooddesignawards.org/project/valtra-s-series-2024/" target="_blank" class="award-visual-row">
+                    <div class="award-info">
+                        <span class="award-year">2024</span>
+                        <h3 class="award-project">Valtra S Series</h3>
+                        <span class="award-title">Good Design Award</span>
                     </div>
-                    <div class="card-info">
-                        <h3>Safety Graphics</h3>
-                        <span class="tag">Industrial Graphics • Standards</span>
+                    <div class="award-icon">
+                        <img src="svg/Good_design_award.svg" alt="Good Design Logo">
                     </div>
                 </a>
 
-                <a href="#" class="project-card">
-                    <div class="card-image">
-                        <img src="img/Valtra_SMART_01.png" alt="UI Design">
+                <a href="https://www.red-dot.org/project/valtra-q-series-64140" target="_blank" class="award-visual-row">
+                    <div class="award-info">
+                        <span class="award-year">2023</span>
+                        <h3 class="award-project">Valtra Q Series</h3>
+                        <span class="award-title">Red Dot Award</span>
                     </div>
-                    <div class="card-info">
-                        <h3>HMI Interface</h3>
-                        <span class="tag">UI/UX • Design System</span>
+                    <div class="award-icon">
+                        <img src="svg/Logo_of_Red_Dot_Award.svg" alt="Red Dot Logo">
+                    </div>
+                </a>
+                
+                <a href="https://ifdesign.com/en/winner-ranking/project/valtra-g135/318153" target="_blank" class="award-visual-row">
+                    <div class="award-info">
+                        <span class="award-year">2021</span>
+                        <h3 class="award-project">Valtra G135</h3>
+                        <span class="award-title">iF Design Award</span>
+                    </div>
+                    <div class="award-icon">
+                        <img src="svg/IFForumDesignLogo.svg" alt="iF Logo">
                     </div>
                 </a>
 
@@ -104,83 +205,45 @@
         </div>
     </section>
 
-<section class="awards-list-section">
-    <div class="container">
-        <div class="section-header-row">
-            <h2 class="section-heading">Honors & Recognition</h2>
-        </div>
-
-        <div class="award-grid-visual">
-            
-            <a href="https://www.red-dot.org/project/valtra-s-series-81509" target="_blank" class="award-visual-row">
-                <div class="award-info">
-                    <span class="award-year">2025</span>
-                    <h3 class="award-project">Valtra S Series</h3>
-                    <span class="award-title text-accent">Red Dot: Best of the Best</span>
-                </div>
-                <div class="award-icon">
-                    <img src="svg/Logo_of_Red_Dot_Award.svg" alt="Red Dot Logo">
-                </div>
-            </a>
-            
-            <a href="https://ifdesign.com/en/winner-ranking/project/valtra-s-series/672528" target="_blank" class="award-visual-row">
-                <div class="award-info">
-                    <span class="award-year">2025</span>
-                    <h3 class="award-project">Valtra S Series</h3>
-                    <span class="award-title">iF Design Award</span>
-                </div>
-                <div class="award-icon">
-                    <img src="svg/IFForumDesignLogo.svg" alt="iF Logo">
-                </div>
-            </a>
-
-            <a href="https://gooddesignawards.org/project/valtra-s-series-2024/" target="_blank" class="award-visual-row">
-                <div class="award-info">
-                    <span class="award-year">2024</span>
-                    <h3 class="award-project">Valtra S Series</h3>
-                    <span class="award-title">Good Design Award</span>
-                </div>
-                <div class="award-icon">
-                    <img src="svg/Good_design_award.svg" alt="Good Design Logo">
-                </div>
-            </a>
-
-            <a href="https://www.red-dot.org/project/valtra-q-series-64140" target="_blank" class="award-visual-row">
-                <div class="award-info">
-                    <span class="award-year">2023</span>
-                    <h3 class="award-project">Valtra Q Series</h3>
-                    <span class="award-title">Red Dot Award</span>
-                </div>
-                <div class="award-icon">
-                    <img src="svg/Logo_of_Red_Dot_Award.svg" alt="Red Dot Logo">
-                </div>
-            </a>
-
-            <a href="https://ifdesign.com/en/winner-ranking/project/valtra-g135/318153" target="_blank" class="award-visual-row">
-                <div class="award-info">
-                    <span class="award-year">2021</span>
-                    <h3 class="award-project">Valtra G135</h3>
-                    <span class="award-title">iF Design Award</span>
-                </div>
-                <div class="award-icon">
-                    <img src="svg/IFForumDesignLogo.svg" alt="iF Logo">
-                </div>
-            </a>
-
-        </div>
-    </div>
-</section>
-    
-    <footer class="footer-section">
+    <section class="cv-section fade-on-scroll">
         <div class="container">
-            <span class="eyebrow">Contact</span>
-            <h2 class="big-cta">Let's Talk.</h2>
-            <div class="footer-links">
-                <a href="mailto:email@example.com" class="btn">Email Me</a>
-                <a href="#" class="btn-text">LinkedIn ↗</a>
-                <a href="#" class="btn-text">Download CV ⬇</a>
+            <div class="about-grid">
+                <div class="about-label">
+                    <h2 class="section-label">Experience</h2>
+                </div>
+                <div class="cv-list">
+                    <div class="cv-item">
+                        <h4>Valtra Inc., AGCO Corporation</h4>
+                        <span class="cv-role">Industrial & Visual Designer (2017–Present)</span>
+                        <p>A core member of the design team responsible for the visual definition of Valtra’s S, Q, N, and G Series. Executed end-to-end creation of marketing 3D assets, HMI visual components, and technical graphic design.</p>
+                    </div>
+                    <div class="cv-item">
+                        <h4>Samu Karjalainen Design</h4>
+                        <span class="cv-role">Independent Consultant (2016–2021)</span>
+                        <p>Provided comprehensive design services for industrial clients, ranging from brand identity and web development to high-fidelity 3D product visualization.</p>
+                    </div>
+                </div>
             </div>
-            <div class="copyright">© 2025 Samu Karjalainen.</div>
+        </div>
+    </section>
+
+    <footer class="footer-section fade-on-scroll">
+        <div class="container">
+            <div class="footer-content">
+                <h4 class="footer-label">Contact</h4>
+                <h2 class="footer-cta">LET’S TALK</h2>
+                <p class="footer-text">Open to collaborations involving HMI systems, industrial design, or forward-thinking UI/UX.</p>
+                
+                <div class="footer-links">
+                    <a href="mailto:email@example.com" class="btn btn-primary">Email Me</a>
+                    <a href="#" class="btn">LinkedIn</a>
+                    <a href="#" class="btn">Download CV</a>
+                </div>
+
+                <div class="copyright">
+                    © 2025 Samu Karjalainen. Based in Jyväskylä, Finland.
+                </div>
+            </div>
         </div>
     </footer>
 
