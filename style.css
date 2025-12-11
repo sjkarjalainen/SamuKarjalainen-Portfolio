@@ -630,11 +630,16 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 }
 
 .nav-logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-    color: white;
+    /* Container for the logo image */
     text-decoration: none;
+    display: flex; /* Ensures image is centered/aligned if necessary */
+    height: 40px; /* Set a consistent height for the logo area */
+}
+
+.nav-logo img {
+    height: 100%; /* Make the image fill the container height */
+    width: auto;
+    object-fit: contain;
 }
 
 .nav-links a {
