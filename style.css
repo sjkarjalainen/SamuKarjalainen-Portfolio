@@ -4,7 +4,7 @@
     --bg-card: #141414;
     --text-main: #ffffff;
     --text-muted: #a0a0a0;
-    --accent: #B77591; /* UPDATED: Soft Magenta/Muted Rose Violet to match logo */
+    --accent: #9c1c63; /* UPDATED: Soft Magenta/Muted Rose Violet to match logo */
     --font-main: 'Inter', sans-serif;
     --container-max: 1240px;
     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -283,8 +283,8 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 .award-pill.highlight {
     border-color: var(--accent);
     color: white;
-    /* Updated background to use the new accent with lower opacity */
-    background: rgba(183, 117, 145, 0.15); 
+    /* MATCHING VALUE: Updated to use 15% opacity of #9c1c63 */
+    background: rgba(156, 28, 99, 0.15);
 }
 
 /* RESPONSIVE ADJUSTMENTS */
