@@ -607,3 +607,80 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
         color: #555 !important;
     }
 }
+
+/* --- FIXED NAVIGATION HEADER --- */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(10, 10, 10, 0.8); /* Semi-transparent background */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #1a1a1a;
+    transition: all 0.3s ease;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-left: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+.btn-nav {
+    /* Style the button link to be distinct */
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    background: var(--accent);
+    color: white;
+    border: none;
+    margin-left: 30px;
+}
+.btn-nav:hover {
+    background: white;
+    color: var(--bg-dark);
+}
+
+/* Add padding to the top of the body so content isn't hidden behind the fixed header */
+body {
+    padding-top: 70px; 
+}
+
+/* CV Page Header Style (Reusing main header styles) */
+.cv-header {
+    position: sticky;
+    top: 0;
+    background: var(--bg-dark);
+    padding: 10px 0;
+}
+.cv-header .nav-content {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* Override padding for the CV page body */
+.cv-page {
+    padding-top: 0; 
+}
