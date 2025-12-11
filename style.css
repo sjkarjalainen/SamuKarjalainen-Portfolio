@@ -24,7 +24,7 @@ body {
     width: 100%;
 }
 
-img { max-width: 100%; display: block; }
+img { max-width: 90%; display: block; } /* reduced width from 100% */
 a { text-decoration: none; color: inherit; transition: var(--transition); }
 
 /* --- REUSABLE UTILITIES --- */
