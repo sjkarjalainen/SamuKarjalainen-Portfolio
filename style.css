@@ -500,3 +500,110 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
     .award-visual-row { align-items: flex-start; }
     .award-icon { width: 50px; height: 50px; margin-top: 5px; }
 }
+
+/* ==================================== */
+/* --- CV PAGE STYLES (cv.html) --- */
+/* ==================================== */
+
+.cv-page {
+    background: var(--bg-dark);
+}
+
+.cv-header {
+    background: #000;
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 1px solid #222;
+}
+
+.cv-header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.cv-header p {
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+.back-link {
+    display: block;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.back-link:hover {
+    color: white;
+}
+
+.cv-grid-two-col {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    padding: 80px 24px;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.cv-heading {
+    font-size: 1.5rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.cv-section-education {
+    border-bottom: none;
+}
+
+.cv-item h4 {
+    font-size: 1.25rem;
+    margin-bottom: 4px;
+    color: white;
+}
+
+/* Skills Grid Reuse */
+.cv-section-skills .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.cv-section-skills .skill-category {
+    padding-right: 20px;
+}
+
+.cv-section-skills h4 {
+    color: white;
+    font-weight: 700;
+}
+
+.cv-footer {
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* --- PRINT STYLES (Makes it look clean when saved as PDF) --- */
+@media print {
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    .cv-header, .cv-footer, .back-link {
+        display: none !important;
+    }
+    .cv-grid-two-col {
+        grid-template-columns: 150px 1fr !important;
+        padding: 20px 0 !important;
+        border-bottom: 1px solid #ccc !important;
+    }
+    .cv-heading {
+        color: #000 !important;
+    }
+    .cv-item p, .cv-role {
+        color: #555 !important;
+    }
+}
