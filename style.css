@@ -217,8 +217,12 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
     max-width: 1400px;
     width: 100%;
     height: auto;
-    filter: drop-shadow(0 30px 60px rgba(0,0,0,0.8)); /* Deep shadow for realism */
-    transition: transform 0.5s ease;
+    filter: drop-shadow(0 30px 60px rgba(0,0,0,0.8));
+    
+    /* REMOVED: transition: transform 0.5s ease; (GSAP handles this now) */
+    
+    /* ADDED: Optimization for smooth scaling */
+    will-change: transform;
 }
 
 /* LAYER 3: The Award Story Overlay */
