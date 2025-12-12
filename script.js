@@ -1,7 +1,7 @@
 // Register GSAP Plugin
 gsap.registerPlugin(ScrollTrigger);
 
-// 1. GENERAL FADE-IN ANIMATION FOR SECTIONS
+// 1. GENERAL FADE-IN ANIMATION
 const sections = document.querySelectorAll('.fade-on-scroll');
 
 sections.forEach(section => {
@@ -14,7 +14,7 @@ sections.forEach(section => {
             ease: 'power2.out',
             scrollTrigger: {
                 trigger: section,
-                start: 'top 85%', // Triggers when top of section hits 85% viewport height
+                start: 'top 85%',
                 toggleActions: 'play none none none'
             }
         }
@@ -22,36 +22,54 @@ sections.forEach(section => {
 });
 
 // 2. DRAMATIC TRACTOR PARALLAX ZOOM
-// Only run if the element exists
 if (document.querySelector('.tractor-section')) {
-    
-    // Timeline allows us to sync multiple movements
     let tl = gsap.timeline({
         scrollTrigger: {
             trigger: ".tractor-section",
-            start: "top bottom",   // Start when top of section hits bottom of screen
-            end: "bottom top",     // End when bottom of section hits top of screen
-            scrub: 0.5             // Smooth scrubbing effect (0.5s lag for weight)
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 0.5
         }
     });
 
-    // A. The Tractor: Zooms IN and moves slightly DOWN (for weight)
-    tl.to(".tractor-still", {
-        scale: 1.2,  // Grows 20% larger
-        y: 50,       // Moves down slightly
-        ease: "none" // Linear movement tied to scroll
-    }, 0);           // "0" means start at beginning of timeline
-
-    // B. The Background Text: Moves DOWN faster (Parallax depth)
-    tl.to(".bg-text-layer", {
-        y: 150,      // Moves down 150px
-        opacity: 0.1, // Fades in slightly more
-        ease: "none"
-    }, 0);
-
-    // C. The Floating Card: Moves UP slightly (Counter-movement)
-    tl.to(".showcase-overlay", {
-        y: -30,      // Floats up
-        ease: "none"
-    }, 0);
+    tl.to(".tractor-still", { scale: 1.2, y: 50, ease: "none" }, 0);
+    tl.to(".bg-text-layer", { y: 150, opacity: 0.1, ease: "none" }, 0);
+    tl.to(".showcase-overlay", { y: -30, ease: "none" }, 0);
 }
+
+// 3. SMART DISPLAY TILT ANIMATION
+// When .case-image comes into view, tilt it from right to center
+if (document.querySelector('.case-image img')) {
+    gsap.fromTo(".case-image img", 
+        { 
+            rotation: 15,  // Start tilted 15 degrees to the right
+            scale: 0.9,    // Slightly smaller
+            opacity: 0,
+            x: 50          // Slightly to the right
+        },
+        {
+            rotation: 0,   // End perfectly straight
+            scale: 1,
+            opacity: 1,
+            x: 0,
+            duration: 1.5,
+            ease: "power3.out", // Smooth "settling" feel
+            scrollTrigger: {
+                trigger: ".case-study-section",
+                start: "top 70%", // Start animation when section is 70% in view
+                toggleActions: "play none none reverse"
+            }
+        }
+    );
+}
+
+// 4. HEADER BACKGROUND TOGGLE ON SCROLL
+const header = document.querySelector('.main-header');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
