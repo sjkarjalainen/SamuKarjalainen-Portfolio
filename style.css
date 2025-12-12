@@ -100,14 +100,6 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
     /* Padding managed by header parent now */
 }
 
-.nav-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
 .nav-logo {
     text-decoration: none;
     display: flex;
@@ -651,6 +643,31 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 .cv-section-skills h4 { color: white; font-weight: 700; }
 .cv-footer { padding: 30px 0; text-align: center; font-size: 0.9rem; color: #333; }
 
+/* --- CV PAGE SPECIFIC HERO --- */
+.cv-hero-section {
+    padding-top: 100px; /* Space below fixed navigation */
+}
+
+/* Revert the cv-header styles to use the main-header component structure */
+.cv-main-header {
+    /* Use main-header styling for fixed position and background */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(10, 10, 10, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+/* Fix the header h1 size on the CV page since it's used inside the content area */
+.cv-header-info h1 {
+    font-size: clamp(2rem, 3.5vw, 3rem); /* Adjust size */
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0;
+}
+
 
 /* --- ANIMATIONS --- */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
@@ -687,77 +704,9 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 
 @media print {
     body { background: white !important; color: black !important; padding-top: 0; }
-    .main-header, .cv-footer, .back-link, .scroll-indicator { display: none !important; }
+    .main-header, .cv-main-header, .cv-footer, .back-link, .scroll-indicator { display: none !important; }
     .cv-grid-two-col { grid-template-columns: 150px 1fr !important; padding: 20px 0 !important; border-bottom: 1px solid #ccc !important; }
     .cv-heading { color: #000 !important; }
     .cv-item p, .cv-role { color: #555 !important; }
     .cv-profile-image { display: none !important; }
-    .cv-header-grid { grid-template-columns: 1fr !important; text-align: left !important; }
-    .cv-header { background: white !important; color: black !important; border-bottom: 2px solid #000 !important; }
-    .cv-header p { color: #000 !important; font-weight: bold; }
-}
-
-/* --- LIGHTBOX (IMAGE POP-OUT) --- */
-.lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.95); /* Very dark background */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 2000; /* Sit on top of everything (including header) */
-    opacity: 0;
-    pointer-events: none; /* Hidden by default */
-    transition: opacity 0.3s ease;
-}
-
-.lightbox.active {
-    opacity: 1;
-    pointer-events: all; /* Clickable when active */
-}
-
-.lightbox img {
-    max-width: 90%;
-    max-height: 80vh;
-    object-fit: contain;
-    border-radius: 4px;
-    box-shadow: 0 0 50px rgba(0,0,0,0.5);
-    transform: scale(0.95);
-    transition: transform 0.3s ease;
-}
-
-.lightbox.active img {
-    transform: scale(1); /* Slight zoom-in effect when opening */
-}
-
-.lightbox-close {
-    position: absolute;
-    top: 30px;
-    right: 40px;
-    color: white;
-    font-size: 3rem;
-    cursor: pointer;
-    line-height: 1;
-    transition: color 0.3s ease;
-}
-
-.lightbox-close:hover {
-    color: var(--accent);
-}
-
-.lightbox-caption {
-    margin-top: 20px;
-    color: var(--text-muted);
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Add cursor pointer to images that can be clicked */
-.project-thumb img, .hobby-thumb img {
-    cursor: zoom-in;
-}
+    .cv-header-grid { grid-template-columns: 1fr !important; text-align
