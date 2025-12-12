@@ -715,7 +715,7 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
     padding: 8px 16px;
     font-size: 0.85rem;
     background: var(--accent);
-    color: white;
+    color: black;
     border: none;
     margin-left: 30px;
 }
