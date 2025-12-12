@@ -122,23 +122,29 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 
 .nav-links a:hover { color: var(--accent); }
 
-.btn-nav {
+/* FIXED: Added ".nav-links" before the class to increase specificity/strength */
+.nav-links .btn-nav {
     padding: 8px 16px;
     font-size: 0.85rem;
-    background: var(--accent); /* Gold Background */
     
-    /* UPDATED: Dark text for better contrast against gold */
-    color: var(--bg-dark); 
-    font-weight: 700; /* Made slightly bolder for readability */
+    /* BACKGROUND: Gold */
+    background: var(--accent); 
     
+    /* TEXT COLOR: Force Black (bg-dark) with !important to ensure it overrides default link styles */
+    color: var(--bg-dark) !important; 
+    
+    font-weight: 700; /* Bold text for readability */
     border: none;
     margin-left: 30px;
-    border-radius: 4px; /* Optional: matches your other buttons */
+    border-radius: 4px;
+    
+    /* Ensure cursor looks like a button */
+    cursor: pointer;
 }
 
-.btn-nav:hover {
+.nav-links .btn-nav:hover {
     background: white;
-    color: var(--bg-dark);
+    color: var(--bg-dark) !important;
 }
 
 /* --- 1. HERO SECTION --- */
