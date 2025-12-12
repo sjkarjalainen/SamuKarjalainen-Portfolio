@@ -230,7 +230,7 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 }
 
 .hero-img {
-    height: 95vh;
+    height: 75vh;
     width: auto;
     object-fit: contain;
     transform-origin: bottom center;
