@@ -34,33 +34,29 @@ if (document.querySelector('.tractor-section')) {
 
     // The Tractor grows and sinks slightly
     tl.to(".tractor-still", { scale: 1.2, y: 50, ease: "none" }, 0);
-    //Background text moves faster (parallax)
+    // Background text moves faster (parallax)
     tl.to(".bg-text-layer", { y: 150, opacity: 0.1, ease: "none" }, 0);
     // Floating card moves opposite direction
     tl.to(".showcase-overlay", { y: -30, ease: "none" }, 0);
 }
 
-// --- 3. SMART DISPLAY SUBTLE TILT (SCRUBBED) ---
+// --- 3. SMART DISPLAY ULTRA-SUBTLE TILT (SCRUBBED) ---
 if (document.querySelector('.case-image img')) {
-    // We use a timeline coupled with a scrubbed ScrollTrigger
     let tiltTl = gsap.timeline({
         scrollTrigger: {
             trigger: ".case-study-section",
-            // Start animation immediately when the section enters viewport
-            start: "top bottom",
-            // Finish the animation exactly when the image is centered on screen
-            end: "center center",
-            // Link animation progress directly to scrollbar with a 1 second smooth lag
-            scrub: 1
+            start: "top bottom",    // Start when top of section enters viewport
+            end: "center center",   // End when image is dead center
+            scrub: 1                // Smooth lag for weight
         }
     });
 
     tiltTl.fromTo(".case-image img",
         {
-            rotation: 8,      // Subtle start: Tilted 8 degrees right
-            scale: 0.95,      // Subtle start: Slightly smaller
-            opacity: 0.6,     // Start partially visible
-            x: 30,            // Subtle offset right
+            rotation: 4,      // VERY SUBTLE: Only 4 degrees
+            scale: 0.98,      // Almost full size already
+            opacity: 0.8,     // Mostly visible already
+            x: 20,            // Tiny shift from right
             transformOrigin: "center center"
         },
         {
@@ -68,11 +64,10 @@ if (document.querySelector('.case-image img')) {
             scale: 1,      // End: Full size
             opacity: 1,    // End: Fully visible
             x: 0,          // End: Centered
-            ease: "none"   // Linear ease is best for scrubbing
+            ease: "none"   // Linear ease for scrubbing
         }
     );
 }
-
 
 // --- 4. HEADER BACKGROUND TOGGLE ON SCROLL ---
 const header = document.querySelector('.main-header');
