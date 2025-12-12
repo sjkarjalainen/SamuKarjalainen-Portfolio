@@ -79,3 +79,50 @@ window.addEventListener('scroll', () => {
         header.classList.remove('scrolled');
     }
 });
+
+// --- 5. LIGHTBOX FUNCTIONALITY ---
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCaption = document.getElementById('lightbox-caption');
+const closeBtn = document.querySelector('.lightbox-close');
+
+// Select all images inside Project cards and Hobby cards
+const zoomableImages = document.querySelectorAll('.project-thumb img, .hobby-thumb img');
+
+zoomableImages.forEach(img => {
+    img.addEventListener('click', () => {
+        const src = img.getAttribute('src');
+        const alt = img.getAttribute('alt');
+        
+        lightboxImg.src = src;
+        lightboxCaption.textContent = alt; // Uses the Alt text as a caption
+        lightbox.classList.add('active');
+        
+        // Disable page scroll when lightbox is open
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+// Close Lightbox functions
+const closeLightbox = () => {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = 'auto'; // Re-enable scroll
+    // Clear src after fade out to prevent flickering next time
+    setTimeout(() => { lightboxImg.src = ''; }, 300);
+};
+
+closeBtn.addEventListener('click', closeLightbox);
+
+// Close when clicking outside the image (on the background)
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        closeLightbox();
+    }
+});
+
+// Close with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        closeLightbox();
+    }
+});
