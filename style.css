@@ -649,9 +649,9 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 .cv-section-skills h4 { color: white; font-weight: 700; }
 .cv-footer { padding: 30px 0; text-align: center; font-size: 0.9rem; color: #333; }
 
-/* --- CV PAGE SPECIFIC HERO --- *
+/* --- CV PAGE SPECIFIC HERO --- */
 .cv-hero-section {
-    padding-top: 100px; /* Space below fixed navigation *
+    padding-top: 100px; /* Space below fixed navigation */
 }*/
 
 /* Revert the cv-header styles to use the main-header component structure */
