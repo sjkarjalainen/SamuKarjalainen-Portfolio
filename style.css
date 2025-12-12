@@ -133,13 +133,21 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 .btn-nav {
     padding: 8px 16px;
     font-size: 0.85rem;
-    background: var(--accent);
-    color: white;
+    background: var(--accent); /* Gold Background */
+    
+    /* UPDATED: Dark text for better contrast against gold */
+    color: var(--bg-dark); 
+    font-weight: 700; /* Made slightly bolder for readability */
+    
     border: none;
     margin-left: 30px;
+    border-radius: 4px; /* Optional: matches your other buttons */
 }
-.btn-nav:hover { background: white; color: var(--bg-dark); }
 
+.btn-nav:hover {
+    background: white;
+    color: var(--bg-dark);
+}
 
 /* --- 1. HERO SECTION --- */
 .hero-section {
