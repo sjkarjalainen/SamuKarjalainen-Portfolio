@@ -230,11 +230,23 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
+    
+    /* ADDED: Lifts the image up from the bottom edge */
+    padding-bottom: 80px; 
+    
     opacity: 0;
     animation: fadeIn 1.5s ease-out 0.2s forwards;
 }
-@media (min-width: 1024px) {
-    .hero-image-wrapper { padding-left: 40px; }
+
+@media (max-width: 1024px) {
+    /* ... other rules ... */
+    .hero-image-wrapper { 
+        justify-content: center; 
+        order: 2; 
+        /* UPDATED: Change 'padding: 0;' to keep the bottom padding on mobile too */
+        padding: 0 0 40px 0; 
+    }
+    /* ... */
 }
 
 .hero-img {
