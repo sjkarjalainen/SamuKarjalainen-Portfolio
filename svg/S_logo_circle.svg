@@ -1,1 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 193.97 193.97"><defs><style>.cls-1{fill:url(#linear-gradient);}</style><linearGradient id="linear-gradient" x1="164.86" y1="166.25" x2="29.11" y2="27.71" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2e899f"/><stop offset="0.35" stop-color="#175d96"/><stop offset="0.81" stop-color="#197cb8"/><stop offset="0.87" stop-color="#4289bf"/><stop offset="1" stop-color="#4aaedf"/></linearGradient></defs><title>Asset 7</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M98.82,0A97,97,0,0,0,0,98.82C1,150.68,43.29,193,95.14,193.95A97,97,0,0,0,194,95.14C193,43.29,150.68,1,98.82,0ZM113,142.69c-15.66,21.16-45.52,27.63-67,12.48C26.86,141.72,14.23,118.5,14.32,94.95,14.37,80.74,25.25,68.63,33,76.63,46.76,90.71,80.68,105,108.89,112.49,122.22,116,120.34,132.78,113,142.69ZM165.08,103c-28.9-28-63.52-28.73-82.79-32-13.44-2.27-13.64-15.44-8.12-25.84C85.94,22.92,118.43,14.85,137.36,24,159.46,34.63,169.08,50.36,178,76.61,184.59,95.78,172.73,110.36,165.08,103Z"/></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 193.97 193.97">
+  <defs>
+    <linearGradient id="gold-gradient" x1="164.86" y1="166.25" x2="29.11" y2="27.71" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8a5e18"/>
+      <stop offset="0.35" stop-color="#b8862e"/>
+      <stop offset="0.81" stop-color="#d8a84f"/>
+      <stop offset="1" stop-color="#f5d68b"/>
+    </linearGradient>
+  </defs>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <path fill="url(#gold-gradient)" d="M98.82,0A97,97,0,0,0,0,98.82C1,150.68,43.29,193,95.14,193.95A97,97,0,0,0,194,95.14C193,43.29,150.68,1,98.82,0ZM113,142.69c-15.66,21.16-45.52,27.63-67,12.48C26.86,141.72,14.23,118.5,14.32,94.95,14.37,80.74,25.25,68.63,33,76.63,46.76,90.71,80.68,105,108.89,112.49,122.22,116,120.34,132.78,113,142.69ZM165.08,103c-28.9-28-63.52-28.73-82.79-32-13.44-2.27-13.64-15.44-8.12-25.84C85.94,22.92,118.43,14.85,137.36,24,159.46,34.63,169.08,50.36,178,76.61,184.59,95.78,172.73,110.36,165.08,103Z"/>
+    </g>
+  </g>
+</svg>
