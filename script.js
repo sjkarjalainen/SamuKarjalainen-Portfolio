@@ -47,11 +47,11 @@ if (document.querySelector('.case-image img')) {
     
     gsap.fromTo(".case-image img",
         {
-            rotation: -3,      // START: Tilted slightly LEFT
+            rotation: 3,      // START: Tilted slightly LEFT
             transformOrigin: "center center"
         },
         {
-            rotation: 3,       // END: Tilted slightly RIGHT
+            rotation: -3,       // END: Tilted slightly RIGHT
             ease: "none",      // Linear ease ensures it's straight exactly in the middle
             scrollTrigger: {
                 trigger: ".case-study-section",
