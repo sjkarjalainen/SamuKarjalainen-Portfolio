@@ -626,7 +626,7 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
     object-position: 35% top;
     transform: scale(2);
     /* UPDATED: match the origin to the position */
-    transform-origin: 35% top;
+    transform-origin: 25% top;
     
     /* Optional: If the head is cut off, adjust 'top' to a percentage like 'center 20%' */
     /* margin-top: 15px; */ /* Fine-tune if needed */
