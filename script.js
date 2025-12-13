@@ -40,31 +40,25 @@ if (document.querySelector('.tractor-section')) {
     tl.to(".showcase-overlay", { y: -30, ease: "none" }, 0);
 }
 
-// --- 3. SMART DISPLAY ULTRA-SUBTLE TILT (SCRUBBED) ---
+// --- 3. SMART DISPLAY CONTINUOUS TILT (PENDULUM EFFECT) ---
 if (document.querySelector('.case-image img')) {
-    let tiltTl = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".case-study-section",
-            start: "top bottom",    // Start when top of section enters viewport
-            end: "center center",   // End when image is dead center
-            scrub: 1                // Smooth lag for weight
-        }
-    });
-
-    tiltTl.fromTo(".case-image img",
+    // We animate from -3 degrees (left) to +3 degrees (right)
+    // The image will be perfectly at 0 degrees (straight) halfway through the scroll
+    
+    gsap.fromTo(".case-image img",
         {
-            rotation: 4,      // VERY SUBTLE: Only 4 degrees
-            scale: 0.98,      // Almost full size already
-            opacity: 0.8,     // Mostly visible already
-            x: 20,            // Tiny shift from right
+            rotation: -3,      // START: Tilted slightly LEFT
             transformOrigin: "center center"
         },
         {
-            rotation: 0,   // End: Perfectly straight
-            scale: 1,      // End: Full size
-            opacity: 1,    // End: Fully visible
-            x: 0,          // End: Centered
-            ease: "none"   // Linear ease for scrubbing
+            rotation: 3,       // END: Tilted slightly RIGHT
+            ease: "none",      // Linear ease ensures it's straight exactly in the middle
+            scrollTrigger: {
+                trigger: ".case-study-section",
+                start: "top bottom",    // Start when top of section enters viewport
+                end: "bottom top",      // End when bottom of section leaves viewport
+                scrub: 1                // Smooth lag
+            }
         }
     );
 }
