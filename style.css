@@ -623,10 +623,10 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
     object-fit: cover;
     
     /* UPDATED: Zoom in 2x and focus on the top (Face/Torso) */
-    object-position: 35% top;
+    object-position: 45% top;
     transform: scale(2);
     /* UPDATED: match the origin to the position */
-    transform-origin: 25% top;
+    transform-origin: 45% top;
     
     /* Optional: If the head is cut off, adjust 'top' to a percentage like 'center 20%' */
     /* margin-top: 15px; */ /* Fine-tune if needed */
