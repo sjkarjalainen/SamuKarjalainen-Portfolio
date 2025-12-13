@@ -716,4 +716,10 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
     .cv-heading { color: #000 !important; }
     .cv-item p, .cv-role { color: #555 !important; }
     .cv-profile-image { display: none !important; }
-    .cv-header-grid { grid-template-columns: 1fr !important; text-align
+    .cv-header-grid { grid-template-columns: 1fr !important; text-align }
+
+    
+.lightbox.active {
+    opacity: 1;
+    pointer-events: auto; /* Changed from 'all' to 'auto' for better compatibility */
+}
